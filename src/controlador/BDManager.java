@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public abstract class BDManager {
 	public static Connection abrirBD() throws SQLException {
-		String url = "jdbc:mysql://localhost:3306/clientes?useSSL=false";
+		String url = "jdbc:mysql://localhost:3306/numeros_aleatorios?useSSL=false";
 		String user = "listador";
 		String pass = "Ad1234";
 		String driver = "com.mysql.jdbc.Driver";
