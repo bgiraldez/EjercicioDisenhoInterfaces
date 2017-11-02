@@ -26,6 +26,7 @@ import javax.swing.JTextField;
 import controlador.BDManager;
 
 import modelo.MiLogPersonalizado;
+import javax.swing.SpinnerNumberModel;
 
 public class Principal {
 
@@ -99,13 +100,14 @@ public class Principal {
 			}
 		});
 		GridBagConstraints gbc_btnGenerar = new GridBagConstraints();
-		gbc_btnGenerar.insets = new Insets(0, 0, 0, 5);
+		gbc_btnGenerar.insets = new Insets(100, 100, 0, 20);
 		gbc_btnGenerar.gridx = 2;
 		gbc_btnGenerar.gridy = 2;
 		panelGenerar.add(btnGenerar, gbc_btnGenerar);
 
 		lblNumeroAleatorio = new JLabel("0");
 		GridBagConstraints gbc_lblNumeroAleatorio = new GridBagConstraints();
+		gbc_lblNumeroAleatorio.insets = new Insets(100, 20, 0, 0);
 		gbc_lblNumeroAleatorio.gridx = 4;
 		gbc_lblNumeroAleatorio.gridy = 2;
 		panelGenerar.add(lblNumeroAleatorio, gbc_lblNumeroAleatorio);
@@ -144,7 +146,7 @@ public class Principal {
 
 		JLabel lblParmetrosDeConexin = new JLabel("Par\u00E1metros de conexi\u00F3n con la base de datos ");
 		GridBagConstraints gbc_lblParmetrosDeConexin = new GridBagConstraints();
-		gbc_lblParmetrosDeConexin.insets = new Insets(0, 0, 5, 5);
+		gbc_lblParmetrosDeConexin.insets = new Insets(20, 0, 5, 5);
 		gbc_lblParmetrosDeConexin.gridx = 0;
 		gbc_lblParmetrosDeConexin.gridy = 0;
 		panelConfiguracion.add(lblParmetrosDeConexin, gbc_lblParmetrosDeConexin);
@@ -160,7 +162,7 @@ public class Principal {
 		txtServidor = new JTextField();
 		txtServidor.setText("localhost");
 		GridBagConstraints gbc_txtServidor = new GridBagConstraints();
-		gbc_txtServidor.insets = new Insets(0, 0, 5, 0);
+		gbc_txtServidor.insets = new Insets(0, 20, 5, 100);
 		gbc_txtServidor.fill = GridBagConstraints.HORIZONTAL;
 		gbc_txtServidor.gridx = 1;
 		gbc_txtServidor.gridy = 2;
@@ -178,7 +180,7 @@ public class Principal {
 		txtPuerto = new JTextField();
 		txtPuerto.setText("3306");
 		GridBagConstraints gbc_txtPuerto = new GridBagConstraints();
-		gbc_txtPuerto.insets = new Insets(0, 0, 5, 0);
+		gbc_txtPuerto.insets = new Insets(0, 20, 5, 100);
 		gbc_txtPuerto.fill = GridBagConstraints.HORIZONTAL;
 		gbc_txtPuerto.gridx = 1;
 		gbc_txtPuerto.gridy = 3;
@@ -195,7 +197,7 @@ public class Principal {
 
 		txtUsuario = new JTextField();
 		GridBagConstraints gbc_txtUsuario = new GridBagConstraints();
-		gbc_txtUsuario.insets = new Insets(0, 0, 5, 0);
+		gbc_txtUsuario.insets = new Insets(2, 20, 5, 100);
 		gbc_txtUsuario.fill = GridBagConstraints.HORIZONTAL;
 		gbc_txtUsuario.gridx = 1;
 		gbc_txtUsuario.gridy = 4;
@@ -212,7 +214,7 @@ public class Principal {
 
 		txtPass = new JTextField();
 		GridBagConstraints gbc_txtPass = new GridBagConstraints();
-		gbc_txtPass.insets = new Insets(0, 0, 5, 0);
+		gbc_txtPass.insets = new Insets(0, 20, 5, 100);
 		gbc_txtPass.fill = GridBagConstraints.HORIZONTAL;
 		gbc_txtPass.gridx = 1;
 		gbc_txtPass.gridy = 5;
@@ -230,7 +232,7 @@ public class Principal {
 		txtSquema = new JTextField();
 		txtSquema.setText("numeros_aleatorios");
 		GridBagConstraints gbc_txtSquema = new GridBagConstraints();
-		gbc_txtSquema.insets = new Insets(0, 0, 5, 0);
+		gbc_txtSquema.insets = new Insets(1, 20, 5, 100);
 		gbc_txtSquema.fill = GridBagConstraints.HORIZONTAL;
 		gbc_txtSquema.gridx = 1;
 		gbc_txtSquema.gridy = 6;
@@ -252,7 +254,9 @@ public class Principal {
 		panelConfiguracion.add(lblValorMximo, gbc_lblValorMximo);
 
 		spnValorMax = new JSpinner();
+		spnValorMax.setModel(new SpinnerNumberModel(new Integer(1000), new Integer(0), null, new Integer(1)));
 		GridBagConstraints gbc_spnValorMax = new GridBagConstraints();
+		gbc_spnValorMax.ipadx = 40;
 		gbc_spnValorMax.insets = new Insets(0, 0, 5, 0);
 		gbc_spnValorMax.gridx = 1;
 		gbc_spnValorMax.gridy = 10;
@@ -267,6 +271,7 @@ public class Principal {
 
 		spnValorMin = new JSpinner();
 		GridBagConstraints gbc_spnValorMin = new GridBagConstraints();
+		gbc_spnValorMin.ipadx = 40;
 		gbc_spnValorMin.insets = new Insets(0, 0, 5, 0);
 		gbc_spnValorMin.gridx = 1;
 		gbc_spnValorMin.gridy = 11;
